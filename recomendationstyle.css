@@ -1,0 +1,310 @@
+:root{
+    /* --stickycolor:#362419; */
+    --stickycolor:linear-gradient(to right,#00093c,#2d0b00);
+
+    --navtxtcolor:#ffd700;
+    --cardbgcolor:white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+/* --------------------𝐍𝐚𝐯𝐛𝐚𝐫 𝐂𝐒𝐒-------------------- */
+.content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+    /* margin-bottom: 140px; */
+}
+.navbar{
+    position:fixed ;
+    z-index: 5;
+    width: 100%;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    background: var(--stickycolor);
+    padding:12px 0;
+    z-index: 100000;
+}
+.navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.navbar .menu-list{
+    display: inline-flex;
+}
+.menu-list li{
+    list-style: none;
+}
+.menu-list li a{
+    color: white;
+    font-size: 18px;
+    margin-left: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+    color: cyan;
+}
+.icon{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.icon.cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+/* --------------------𝐍𝐚𝐯𝐛𝐚𝐫 𝐂𝐒𝐒-------------------- */
+
+
+/* --------------------𝐍𝐚𝐯𝐛𝐚𝐫 𝐌𝐞𝐝𝐢𝐚 𝐐𝐮𝐞𝐫𝐢𝐞𝐬-------------------- */
+@media (max-width: 1021px) {
+    body.disabledScroll{
+        overflow: hidden;
+    }
+    .icon{
+        display: block;
+    }
+    .icon.hide{
+        display: none;
+    }
+    .navbar .menu-list{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background-color: var(--stickycolor);
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 1s ease;
+    }
+    .navbar .menu-list.active{
+        left: 0%;
+    }
+    .navbar .menu-list li{
+        margin-top: 45px;
+    }
+    .navbar .menu-list li a{
+        font-size: 23px;
+    } 
+}
+/* --------------------𝐍𝐚𝐯𝐛𝐚𝐫 𝐌𝐞𝐝𝐢𝐚 𝐐𝐮𝐞𝐫𝐢𝐞𝐬-------------------- */
+
+#blog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.blog-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+    top: 100px;
+    text-transform: capitalize;
+}
+.blog-heading h3{
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 600;
+}
+
+
+/* --------------------𝐏𝐚𝐫𝐚𝐥𝐥𝐚𝐱 𝐂𝐒𝐒-------------------- */
+.parallax{
+    background: url(images/slider3.jpg) no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+    animation: animate 30s ease-in-out infinite;
+}
+@keyframes animate{
+    0%,100%{
+        background-image: url(images/slider/slider3.jpg);
+    }
+    25%{
+        background-image: url(images/slider/slider8.jpg);
+    }
+    50%{
+        background-image: url(images/slider/slider6.jpg);
+    }
+    75%{
+        background-image: url(images/slider/slider5.jpg);
+    }
+
+}
+.parallax-inner{
+    background-color: rgb(0, 0,0,0.6);
+    height: 100%;
+}
+.parallax-txt{
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    font-size: 50px;
+    padding: 0px 20px;
+    /* margin: 0px 40px; */
+    /* backdrop-filter: blur(10px); */
+}
+/* --------------------𝐏𝐚𝐫𝐚𝐥𝐥𝐚𝐱 𝐂𝐒𝐒-------------------- */
+
+@media only screen and (max-width:832px){
+    .parallax-txt{
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width:603px){
+    .parallax-txt{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:490px){
+    .parallax-txt{
+        font-size: 25px;
+    }
+}
+
+
+/*-------blog------------*/
+
+#blog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-top: 5%;
+}
+
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+.blog-box{
+    width: 350px;
+    background: var(--stickycolor);
+    margin: 20px;
+
+}
+.blog-img{
+    width: 100%;
+    height: auto;
+}
+.blog-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text .blog-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+}
+.blog-text .blog-title.hover{
+    color: #f33c3c;
+    transition: all ease 0.3s;
+}
+.blog-text p{
+    color: white;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+    text-align:center;
+}
+.blog-text a{
+    color: #0f0f0f;
+}
+.blog-text a:hover{
+    color: cyan;
+    transition: all ease 0.3s;
+}
+.blog-title{
+    text-decoration: none;
+    text-align: center;
+}
+@media(max-width:1250px){
+    .blog-box{
+        width: 300px;
+
+    }
+}
+@media(max-width:1031px){
+    #blog{
+        padding-top: 100px;
+    }
+}
+@media(max-width:1100px){
+    .blog-box{
+        width: 70%;
+        
+    }
+}
+@media(max-width:550px){
+    .blog-box{
+        margin: 50px 10px;
+        width: 100%; 
+    }
+    .blog-heading h3{
+        font-size: 25px;
+    }
+    #blog{
+        padding: 20px;
+    }
+}
+
+
+
+
+footer{
+    text-transform: capitalize;
+    background: var(--stickycolor);
+    height: 100px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+footer img{
+height: 100px;
+}
